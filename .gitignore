@@ -9,3 +9,6 @@ target
 .project
 .classpath
 repository.xml.generated
+node
+node_modules
+/src/main/resources/javascript/apps/*.*

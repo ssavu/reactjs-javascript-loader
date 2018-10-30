@@ -52,9 +52,8 @@
     <artifactId>jahia-modules</artifactId>
     <version>7.3.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>org.jahia.modules</groupId>
   <artifactId>reactjs-javascript-loader</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>ReactJS Javascript Loader</name>
   <description>This is the custom module (ReactJS Javascript Loader) for running on a Digital Experience Manager server.</description>
@@ -62,6 +61,19 @@
     <connection>scm:git:https://github.com/ssavu/reactjs-javascript-loader</connection>
     <developerConnection>scm:git:https://github.com/ssavu/reactjs-javascript-loader</developerConnection>
   </scm>
+  <distributionManagement>
+    <repository>
+      <id>jahia-enterprise-releases</id>
+      <url>https://devtools.jahia.com/nexus/content/repositories/jahia-enterprise-releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>jahia-enterprise-snapshots</id>
+      <url>https://devtools.jahia.com/nexus/content/repositories/jahia-enterprise-snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <properties>
+    <jahia-depends>default,javascript-loader</jahia-depends>
+  </properties>
   <repositories>
     <repository>
       <releases>
@@ -75,6 +87,18 @@
       <name>Jahia Public Repository</name>
       <url>https://devtools.jahia.com/nexus/content/groups/public</url>
     </repository>
+    <repository>
+      <id>jahia-enterprise</id>
+      <name>Jahia Enterprise Repository</name>
+      <url>https://devtools.jahia.com/nexus/content/groups/enterprise</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
   </repositories>
   <build>
     <plugins>
@@ -87,6 +111,41 @@
             <Jahia-Depends>default</Jahia-Depends>
           </instructions>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>npm install node and npm</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>install-node-and-yarn</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>v11.0.0</nodeVersion>
+              <yarnVersion>v1.12.1</yarnVersion>
+            </configuration>
+          </execution>
+          <execution>
+            <id>yarn install</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>yarn</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>webpack</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>webpack</goal>
+            </goals>
+            <configuration>
+              <arguments>${webpack.arguments}</arguments>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
