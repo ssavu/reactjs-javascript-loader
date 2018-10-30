@@ -1,2 +1,7 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<rjlmix = 'http://www.jahia.org/jahia/rjl/mix/1.0'>
+<rjlnt = 'http://www.jahia.org/jahia/rjl/nt/1.0'>
+
+[rjlnt:banner] > jnt:content, jmix:siteComponent, jmix:droppableContent, mix:title
+ - name (string) mandatory
