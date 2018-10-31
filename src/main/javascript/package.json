@@ -1,0 +1,11 @@
+{
+  "name": "@jahia/reactjs-javascript-loader",
+  "version": "1.0.0",
+  "description": "ReactJS example using Javascript Loader for dependency management",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
