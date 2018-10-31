@@ -5,7 +5,9 @@ let config = {
     entry: {
         vendors: [
             "react",
-            "react-dom"
+            "react-dom",
+            "lodash",
+            "moment"
         ]
     },
 

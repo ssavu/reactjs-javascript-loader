@@ -5,3 +5,9 @@
 
 [rjlnt:banner] > jnt:content, jmix:siteComponent, jmix:droppableContent, mix:title
  - name (string) mandatory
+
+[rjlnt:highlights] > jnt:content, mix:title, jmix:siteComponent, jmix:droppableContent, jmix:list, jmix:renderableList orderable
+ + * (rjlnt:highlight)
+
+[rjlnt:highlight] > jnt:news
+ - excerpt (string)

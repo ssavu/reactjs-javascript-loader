@@ -3,7 +3,8 @@ let SystemJSPlugin = require('webpack-systemjs-bundle-plugin/');
 let nodeExternals = require('webpack-node-externals');
 module.exports = {
     entry: {
-        apps: [ path.resolve(__dirname, 'src/main/javascript/apps/banner/main')]
+        apps: [ path.resolve(__dirname, 'src/main/javascript/apps/banner/main'),
+            path.resolve(__dirname, 'src/main/javascript/apps/highlights/main')]
     },
     resolve: {
         mainFields: ['module', 'main'],

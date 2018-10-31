@@ -6,6 +6,8 @@
   "author": "",
   "dependencies": {
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "lodash": "4.17.5",
+    "moment": "^2.22.2"
   }
 }
