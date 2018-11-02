@@ -11,3 +11,8 @@
 
 [rjlnt:highlight] > jnt:news
  - excerpt (string)
+
+[rjlnt:streamedNews] > jnt:content, jmix:siteComponent, jmix:droppableContent, mix:title
+ - sources(string, choicelist[resourceBundle]) = 'bbc-news' mandatory indexed=no multiple  < 'bbc-news', 'abc-news', 'buzzfeed'
+ - language (string) =  'en' mandatory
+ - apiKey (string) mandatory

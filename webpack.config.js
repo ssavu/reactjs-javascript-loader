@@ -4,6 +4,7 @@ let nodeExternals = require('webpack-node-externals');
 module.exports = {
     entry: {
         apps: [ path.resolve(__dirname, 'src/main/javascript/apps/banner/main'),
+            path.resolve(__dirname, 'src/main/javascript/apps/streamedNews/main'),
             path.resolve(__dirname, 'src/main/javascript/apps/highlights/main')]
     },
     resolve: {

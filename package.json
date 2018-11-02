@@ -10,10 +10,12 @@
   "author": "stefan <ssavu@jahia.com>",
   "license": "MIT",
   "dependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "cross-fetch": "^2.2.3",
     "lodash": "4.17.5",
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "newsapi": "^2.4.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

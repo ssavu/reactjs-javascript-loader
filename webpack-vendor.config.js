@@ -7,7 +7,8 @@ let config = {
             "react",
             "react-dom",
             "lodash",
-            "moment"
+            "moment",
+            "newsapi"
         ]
     },
 
